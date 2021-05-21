@@ -1,8 +1,7 @@
-
 function App() {
   return (
-    <div className="App">
-     <h1>cool check if its working </h1>
+    <div>
+      <h1>dsaasd</h1>
     </div>
   );
 }
