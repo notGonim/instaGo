@@ -3,6 +3,7 @@ import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import FirebaseContext from '../context/firebase'
 import * as ROUTES from '../constants/routes'
+import { doesUsernameExist } from '../services/firebase'
 
 
 
@@ -16,15 +17,41 @@ export default function Signup() {
     const [password, setPassword] = useState('')
     const [err, setError] = useState('')
 
-    const isInvalid =username===''||fullname===''|| password === '' || email === ''
+    const isInvalid = username === '' || fullname === '' || password === '' || email === ''
 
 
     const handleSignup = async (e) => {
         e.preventDefault()
-        try {
-
-        } catch (err) {
-
+        const usernameExists = await doesUsernameExist(username)
+        if (!usernameExists.length) {
+            try {
+                const createdUserResult = await firebase.auth().createUserWithEmailAndPassword(email, password)
+                //authentication
+                //
+                await createdUserResult.user.updateProfile({
+                    displayName: username
+                })
+                //create a user 
+                await firebase.firestore().collection('users').add(
+                    {
+                        userId: createdUserResult.user.uid,
+                        username: username.toLowerCase(),
+                        fullname,
+                        emailAddress: email.toLowerCase(),
+                        following: [],
+                        dateCreated: Date.now()
+                    }
+                )
+                history.push(ROUTES.DASHBOARD)
+            } catch (err) {
+                setFullname('')
+                setUsername('')
+                setPassword('')
+                setEmail('')
+                setError(err.message)
+            }
+        } else {
+            setError('That username is already taken, please try another. ')
         }
     }
 

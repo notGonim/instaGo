@@ -6,6 +6,8 @@ import * as ROUTES from './constants/routes'
 
 const login = lazy(() => import('./pages/Login'))
 const signup = lazy(() => import('./pages/Signup'))
+const dashboard = lazy(() => import('./pages/Dashboard'))
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
     <Router>
       <Suspense fallback={<p>Loading ...</p>}>
         <Switch>
+          <Route path={ROUTES.DASHBOARD} exact component={dashboard} />
           <Route path={ROUTES.LOGIN} exact component={login} />
           <Route path={ROUTES.SIGNUP} exact component={signup} />
         </Switch>
