@@ -22,7 +22,7 @@ export default function Login() {
     }, [])
 
     return (
-        <div>
+        <div className="border-2">
             <p>Iam in the login page</p>
         </div>
     )
