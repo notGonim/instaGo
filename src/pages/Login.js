@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import FirebaseContext from '../context/firebase'
+import * as ROUTES from '../constants/routes'
+
+
 
 export default function Login() {
 
@@ -9,13 +12,21 @@ export default function Login() {
     const { firebase } = useContext(FirebaseContext)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
+    const [err, setError] = useState('')
 
     const isInvalid = password === '' || email === ''
 
 
-    const handleLogin = () => {
-
+    const handleLogin = async(e) => {
+        e.preventDefault()
+        try {
+            await firebase.auth().signInWithEmailAndPassword(email, password)
+            history.push(ROUTES.DASHBOARD)
+        } catch (err) {
+            setEmail('')
+            setPassword('')
+            setError(err.message)
+        }
     }
 
     useEffect(() => {
@@ -32,7 +43,7 @@ export default function Login() {
                     <h1 className="flex justify-center w-full">
                         <img src="images/logo.png" alt="instaGo" className="mt-2 w-6/12 mb-4" />
                     </h1>
-                    {error && <p className="mb-4 text-xs text-red-primary">{error}</p>}
+                    {err && <p className="mb-4 text-xs text-red-500">{err}</p>}
                     <form onSubmit={handleLogin} method="POST">
                         <input type="email" placeholder="Email Address" aria-label="Enter your email"
                             onChange={({ target }) => setEmail(target.value)}
@@ -45,8 +56,8 @@ export default function Login() {
                     </form>
                 </div>
                 <div className="flex justify-center items-center flex-col w-full bg-white rounded p-4 border border-gray-primary ">
-                    <p className="text-sm">Don`t have an account? {''} 
-                    <Link to='/signup' className="font-bold text-blue-500 ">Sign up</Link>
+                    <p className="text-sm">Don`t have an account? {''}
+                        <Link to='/signup' className="font-bold text-blue-500 ">Sign up</Link>
                     </p>
                 </div>
             </div>
