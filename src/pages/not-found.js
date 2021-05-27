@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 
 export default function NotFound() {
@@ -6,7 +6,8 @@ export default function NotFound() {
 
     useEffect(() => {
         document.title = 'Not Found - InstaGo'
-    },[])
+    }, [])
+    
     return (
         <div className=" bg-gray-background">
             <div className="mx-auth max-w-screen-lg">
@@ -15,3 +16,5 @@ export default function NotFound() {
         </div>
     )
 }
+
+
