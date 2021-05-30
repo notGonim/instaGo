@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 import React from 'react'
 
-export const User = ({ username, fullname }) => {
+ const User = ({ username, fullname }) => {
     return (
         <>
             {
@@ -37,5 +37,5 @@ export const User = ({ username, fullname }) => {
     )
 }
 
-
-User.whyDidYouRender=true
+export default memo(User)
+//User.whyDidYouRender=true

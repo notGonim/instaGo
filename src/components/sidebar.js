@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import useUser from '../hooks/use-user'
 import Suggestion from './suggestion'
-import { User } from './user'
-export default function Sidebar() {
+import User from './user'
+const Sidebar = () => {
 
 
     const { user: { fullname, userId, username } } = useUser()
@@ -15,3 +15,6 @@ export default function Sidebar() {
 
     )
 }
+
+
+export default memo(Sidebar)
