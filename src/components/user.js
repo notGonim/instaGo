@@ -36,3 +36,6 @@ export const User = ({ username, fullname }) => {
         </>
     )
 }
+
+
+User.whyDidYouRender=true
