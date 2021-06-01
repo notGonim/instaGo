@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
+import { getSuggestProfiles } from '../services/firebase'
 
-export default function Suggestion({ userId }) {
+export default function Suggestion({ userId, following }) {
 
     const [profiles, setProfiles] = useState(null)
 
     useEffect(() => {
+
+
+        async function suggestProfiles() {
+            const response = await getSuggestProfiles(userId, following)
+            setProfiles(response)
+        }
+        if (userId)
+            suggestProfiles()
+
 
     }, [userId])
     return (
