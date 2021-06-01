@@ -16,7 +16,7 @@ export default function usePhotos() {
             const { following } = await getUserByUserId(userId)
             let followedUserPhotos = []
             //To check if the user is actually follow other people ? on the platform  
-            if (following.length > 0) {
+            if (following) {
                 followedUserPhotos = await getPhotos(userId, following)  // this func is to get photos of the users that active user follow 
             }
         }
