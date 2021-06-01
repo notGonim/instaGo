@@ -33,7 +33,7 @@ export default function Suggestion({ userId, following ,loggedInUserDoc}) {
                         <div className="grid mt-4 gap-5">
                             {profiles.map((profile) => (
                                 <SuggestedProfile userId={userId} profileId={profile.userId}
-                                    username={profile.username} suggestedProfileDocId={profile.docId}
+                                    username={profile.username} profileDocid={profile.docId}
                                     loggedInUserDoc={loggedInUserDoc} key={profile.docId} />
                             ))}
                         </div>

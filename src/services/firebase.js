@@ -1,3 +1,4 @@
+import { func } from 'prop-types';
 import { Profiler } from 'react';
 import { firebase, FieldValue } from '../lib/firebase'
 
@@ -37,14 +38,35 @@ export async function updateLoggedInUserFollowing(
     isFollowingProfile  // true/false (iam  currently follow this person )
 ) {
     return firebase.firestore().collection('users')
-        .doc(loggedInUserDoc) 
-        .update({ following: isFollowingProfile ? FieldValue.arrayRemove(profileId) : FieldValue.arrayUnion(profileId) }) //if i am following him then Unfollow else follow   
+        .doc(loggedInUserDoc)
+        .update({
+            following
+                : isFollowingProfile ? FieldValue.arrayRemove(profileId) : FieldValue.arrayUnion(profileId)
+        }) //if i am following him then Unfollow else follow   
 }
 
 
 
-export async function updateFollowedUserFollowers(suggestedProfileDocId, userId) {
+export async function updateFollowedUserFollowers(
+    profileDocid,  //currently logged in user docId    
+    suggestedProfileDocId, //the user that logged in user going to follow 
+    isFollowingProfile  // true/false (iam  currently follow this person )
+) {
+    return firebase.firestore().collection('users')
+        .doc(profileDocid)
+        .update({
+            followers
+                : isFollowingProfile ? FieldValue.arrayRemove(suggestedProfileDocId) : FieldValue.arrayUnion(suggestedProfileDocId)
+        }) //if i am following him then Unfollow else follow   
+}
 
-    return null
 
+// this func is to get photos of the users that active user follow
+export async function getPhotos(userId, following) {
+
+    const result = await firebase.firestore().collection('photos').where('userId', 'in', following).get()
+    const userFollowedPhotos = result.doc.map((photo) => ({ ...photo.data(), docId: photo.id }))
+    const photosWithUserDetails=await Promise.all(
+        userFollowedPhotos.map(async(photo)=>)
+    )
 }
