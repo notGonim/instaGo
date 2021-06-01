@@ -22,10 +22,19 @@ export default function SuggestedProfile({ userId, profileId, username, suggeste
             {!followed && (
                 <div className="flex flex-row items-center align-items justify-between ">
                     <div className="flex items-center justify-between ">
-                        <img className="rounded-full w-8 flex mr-3"
-                            src={`/images/avatars/${username}.jpg`}
-                            alt="profile pic " />
-                        <Link to={`/p/${username}`} >
+
+
+                        {username === 'karl' || username === 'dali' || username === 'orwell' || username === 'raphael' || username === 'steve' ?
+                            (
+                                <img className="rounded-full w-8 flex mr-3"
+                                src={`/images/avatars/${username}.jpg`}
+                                alt="profile pic " />
+                            ) : (
+                                <img className="rounded-full w-8 flex mr-3"
+                                    src={`/images/avatars/default.png`}
+                                    alt="profile pic " />
+                            )
+                        }<Link to={`/p/${username}`} >
                             <p className="font-bold text-sm">{username}</p>
                         </Link>
                     </div>

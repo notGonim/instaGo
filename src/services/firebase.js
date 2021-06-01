@@ -21,7 +21,7 @@ export async function getUserByUserId(userId) {
 
 export async function getSuggestProfiles(userId, following) {
 
-    const result = await firebase.firestore().collection('users').limit(2).get();
+    const result = await firebase.firestore().collection('users').limit(5).get();
 
 
     //so here to make sure to not get my account to be in the suggestion accounts and also to not get any of my following list into the suggestions
