@@ -21,11 +21,30 @@ export async function getUserByUserId(userId) {
 
 export async function getSuggestProfiles(userId, following) {
 
-    const result = await firebase.firestore().collection('users').limit(10).get();
+    const result = await firebase.firestore().collection('users').limit(2).get();
 
 
     //so here to make sure to not get my account to be in the suggestion accounts and also to not get any of my following list into the suggestions
     return result.docs.map((user) => (
         { ...user.data(), docId: user.id }
     )).filter((profile) => profile.userId !== userId && !following.includes(profile.userId))
+}
+
+
+export async function updateLoggedInUserFollowing(
+    loggedInUserDoc,  //currently logged in user docId    
+    profileId, //the user that logged in user going to follow 
+    isFollowingProfile  // true/false (iam  currently follow this person )
+) {
+    return firebase.firestore().collection('users')
+        .doc(loggedInUserDoc) 
+        .update({ following: isFollowingProfile ? FieldValue.arrayRemove(profileId) : FieldValue.arrayUnion(profileId) }) //if i am following him then Unfollow else follow   
+}
+
+
+
+export async function updateFollowedUserFollowers(suggestedProfileDocId, userId) {
+
+    return null
+
 }
