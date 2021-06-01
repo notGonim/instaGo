@@ -17,13 +17,17 @@ import React from 'react'
                 ) : (
                     <Link to={`/p/${username}`} className='grid grid-cols-4 gap-4 mb-6 items-center ' >
                         <div className="flex items-center justify-between col-span-1">
-                            <img
-                                className="rounded-full h-8 w-8 flex"
-                                src={`images/avatars/karl.jpg`}
-                                alt={`${username} profile`}
-
-                            />
-                        </div>
+                        {username === 'karl' || username === 'dali' || username === 'orwell' || username === 'raphael' || username === 'steve' ?
+                            (
+                                <img className="rounded-full w-8 flex mr-3"
+                                src={`/images/avatars/${username}.jpg`}
+                                alt="profile pic " />
+                            ) : (
+                                <img className="rounded-full w-8 flex mr-3"
+                                    src={`/images/avatars/default.png`}
+                                    alt="profile pic " />
+                            )
+                        }</div>
                         <div className="col-span-3">
                             <p className="font-bold text-sm">{username}</p>
                             <p className="text-sm">{fullname}</p>

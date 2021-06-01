@@ -4,10 +4,13 @@ import FirebaseContext from '../context/firebase'
 import UserContext from '../context/user'
 
 import * as ROUTES from '../constants/routes'
+import useUser from '../hooks/use-user'
 
 export default function Header() {
 
     const { user } = useContext(UserContext)
+    const { user: { docId, fullname, userId, username, following } } = useUser()
+
     const { firebase } = useContext(FirebaseContext)
 
 
@@ -72,13 +75,17 @@ export default function Header() {
                                 <div className="flex items-center cursor-pointer">
 
                                     <Link to={`/p/${user.displayName}`} >
-                                        <img
-                                            className="rounded-full h-8 w-8 flex"
-                                            //${user?.username}
-                                            src={`images/avatars/default.png`}
-                                            alt={`${user?.username} profile`}
-
-                                        />
+                                        {username === 'karl' || username === 'dali' || username === 'orwell' || username === 'raphael' || username === 'steve' ?
+                                            (
+                                                <img className="rounded-full w-8 flex mr-3"
+                                                    src={`/images/avatars/${username}.jpg`}
+                                                    alt="profile pic " />
+                                            ) : (
+                                                <img className="rounded-full w-8 flex mr-3"
+                                                    src={`/images/avatars/default.png`}
+                                                    alt="profile pic " />
+                                            )
+                                        }
                                     </Link>
                                 </div>
                             </>
