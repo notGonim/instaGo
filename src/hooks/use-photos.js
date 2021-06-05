@@ -3,7 +3,13 @@ import UserContext from '../context/user'
 import { getPhotos, getUserByUserId } from '../services/firebase'
 
 
+/**
 
+usePhoto hook 
+
+
+
+*/
 export default function usePhotos() {
 
     const [photos, setPhotos] = useState(null)
@@ -13,8 +19,13 @@ export default function usePhotos() {
     useEffect(() => {
 
         async function getTimelinePhotos() {
+
+            //getUserByUserId func is used to get the user 
+
             const { following } = await getUserByUserId(userId)
+
             let followedUserPhotos = []
+
             //To check if the user is actually follow other people ? on the platform  
             if (following) {
                 followedUserPhotos = await getPhotos(userId, following)  // this func is to get photos of the users that active user follow 
@@ -22,7 +33,10 @@ export default function usePhotos() {
         }
 
         getTimelinePhotos()
+
     }, [])
+
+
     return { photos }
 
 
