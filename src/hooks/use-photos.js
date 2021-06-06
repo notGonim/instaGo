@@ -11,7 +11,7 @@ export default function usePhotos() {
     const [photos, setPhotos] = useState(null)
 
     //it should be const { user :{uid:userId='}}
-    const { user:{uid: userId = ''} } = useContext(UserContext)
+    const { user: { uid: userId = '' } } = useContext(UserContext)
 
 
     useEffect(() => {
@@ -19,22 +19,21 @@ export default function usePhotos() {
         async function getTimelinePhotos() {
 
             //getUserByUserId func is used to get the user 
-
-            const { following } = await getUserByUserId(userId)
-
+            const {following} = await getUserByUserId(userId)
             let followedUserPhotos = []
 
             //To check if the user is actually follow other people ? on the platform  
-            if (following) {
+            if (following.length > 0) {
                 followedUserPhotos = await getPhotos(userId, following)  // this func is to get photos of the users that active user follow 
             }
+
             followedUserPhotos.sort((a, b) => b.dateCreated - a.dateCreated)
             setPhotos(followedUserPhotos)
         }
 
         getTimelinePhotos()
 
-    }, [])
+    }, [userId])
 
 
     return { photos }
