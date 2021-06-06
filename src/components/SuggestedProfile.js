@@ -1,5 +1,5 @@
 
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { updateFollowedUserFollowers, updateLoggedInUserFollowing } from '../services/firebase'
 
@@ -8,13 +8,17 @@ export default function SuggestedProfile({ userId, profileId, username, profileD
 
     const [followed, setFollowed] = useState(false)
 
+
+useEffect(()=>{
+
+},[])
     const handleFollowUser = async () => {
         setFollowed(true)
 
         //To update the following list of the loggedin user 
         await updateLoggedInUserFollowing(loggedInUserDoc, profileId, false)
         //To update the follower list of the user that loggedin user followed
-        await updateFollowedUserFollowers(profileDocid, userId,false)
+        await updateFollowedUserFollowers(profileDocid, userId, false)
     }
 
     return (
@@ -27,8 +31,8 @@ export default function SuggestedProfile({ userId, profileId, username, profileD
                         {username === 'karl' || username === 'dali' || username === 'orwell' || username === 'raphael' || username === 'steve' ?
                             (
                                 <img className="rounded-full w-8 flex mr-3"
-                                src={`/images/avatars/${username}.jpg`}
-                                alt="profile pic " />
+                                    src={`/images/avatars/${username}.jpg`}
+                                    alt="profile pic " />
                             ) : (
                                 <img className="rounded-full w-8 flex mr-3"
                                     src={`/images/avatars/default.png`}

@@ -24,7 +24,6 @@ export async function getSuggestProfiles(userId, following) {
 
     const result = await firebase.firestore().collection('users').limit(5).get();
 
-
     //so here to make sure to not get my account to be in the suggestion accounts and also to not get any of my following list into the suggestions
     return result.docs.map((user) => (
         { ...user.data(), docId: user.id }
@@ -42,7 +41,7 @@ export async function updateLoggedInUserFollowing(
         .update({
             following
                 : isFollowingProfile ? FieldValue.arrayRemove(profileId) : FieldValue.arrayUnion(profileId)
-        }) //if i am following him then Unfollow else follow   
+        }) //if i am following him then Un-follow else follow   
 }
 
 
@@ -80,3 +79,4 @@ export async function getPhotos(userId, following) {
     )
     return photosWithUserDetails
 }
+

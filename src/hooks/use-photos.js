@@ -4,16 +4,14 @@ import { getPhotos, getUserByUserId } from '../services/firebase'
 
 
 /**
-
-usePhoto hook 
-
-
-
+ *  usePhoto hook 
 */
 export default function usePhotos() {
 
     const [photos, setPhotos] = useState(null)
-    const { user: { uid: userId = '' } } = useContext(UserContext)
+
+    //it should be const { user :{uid:userId='}}
+    const { uid: userId = '' } = useContext(UserContext)
 
 
     useEffect(() => {
@@ -30,6 +28,8 @@ export default function usePhotos() {
             if (following) {
                 followedUserPhotos = await getPhotos(userId, following)  // this func is to get photos of the users that active user follow 
             }
+            followedUserPhotos.sort((a, b) => b.dataCreated - a.dataCreated)
+            setPhotos(followedUserPhotos)
         }
 
         getTimelinePhotos()
