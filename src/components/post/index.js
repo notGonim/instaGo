@@ -5,19 +5,23 @@ import Image from "./image";
 
 
 
-export default function Post({ content }) {
+export default function Post({ content, src }) {
 
 
     const commentInput = useRef(null)
     const handleFocus = () => commentInput.current.focus()
-
+    /*
+    
+                <Actions docId={content.docId} totalLikes={content.likes.length} likedPhoto={content.userLikedPhoto} handleFocus={handleFocus} />
+            
+    
+    */
 
     return (
 
         <div className="rounded col-span-4 mb-8 border bg-white  border-gray-primary ">
             <Header username={content.username} />
-            <Image src={content.imageSrc} caption={content.caption} />
-            <Actions docId={content.docId} totalLikes={content.likes.length} likedPhoto={content.userLikedPhoto} handleFocus={handleFocus} />
+            <Image src={src} caption={content.caption} />
         </div>
     )
 

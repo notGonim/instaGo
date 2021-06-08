@@ -63,7 +63,7 @@ export async function updateFollowedUserFollowers(
 // this func is to get photos of the users that active user follow
 export async function getPhotos(userId, following) {
     // [5,4,2] => following
-    console.log('userId ====> ',userId,'   Following ===> ' ,following)
+    console.log('userId ====> ', userId, '   Following ===> ', following)
     const result = await firebase
         .firestore()
         .collection('photos')
@@ -89,7 +89,6 @@ export async function getPhotos(userId, following) {
             return { username, ...photo, userLikedPhoto };
         })
     );
-    console.log(photosWithUserDetails)
     return photosWithUserDetails;
 }
 
