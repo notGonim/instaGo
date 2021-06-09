@@ -35,7 +35,7 @@ export default function usePhotos() {
 
         getTimelinePhotos()
 
-    }, [userId])
+    }, [userId,photos])
 
 
     return { photos }

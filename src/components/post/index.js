@@ -10,12 +10,6 @@ export default function Post({ username, docId, likes, userLikedPhoto, src, capt
 
     const commentInput = useRef(null)
     const handleFocus = () => commentInput.current.focus()
-    /*
-
-                      
-
-    
-    */
 
     return (
 
