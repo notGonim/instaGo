@@ -13,7 +13,7 @@ const config = {
     projectId: "instago-4e98b",
     storageBucket: "instago-4e98b.appspot.com",
     messagingSenderId: "3782018195",
-    appId: "1:3782018195:web:0de2e711b98fb661f2b966"
+    appId: "1:3782018195:web:2ecf5a219b23fa62f2b966"
 }
 
 const firebase = Firebase.initializeApp(config)
@@ -24,5 +24,6 @@ const { FieldValue } = Firebase.firestore
 
 //here is where i wanna call the seed file (only once)
 seedDatabase(firebase)
+
 
 export { firebase, FieldValue }

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import Actions from "./actions";
+import Footer from "./footer";
 import Header from "./header";
 import Image from "./image";
 
@@ -17,6 +18,7 @@ export default function Post({ username, docId, likes, userLikedPhoto, src, capt
             <Header username={username} />
             <Image src={src} caption={caption} />
             <Actions docId={docId} totalLikes={likes.length} likedPhoto={userLikedPhoto} handleFocus={handleFocus} />
+            <Footer caption={caption} username={username} />
         </div>
     )
 

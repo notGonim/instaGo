@@ -21,7 +21,6 @@ export default function usePhotos() {
             //getUserByUserId func is used to get the user 
             const [user] = await getUserByUserId(userId)
             const following = user.following
-            console.log(following)
             let followedUserPhotos = []
 
             //To check if the user is actually follow other people ? on the platform  
@@ -29,13 +28,13 @@ export default function usePhotos() {
                 followedUserPhotos = await getPhotos(userId, following)  // this func is to get photos of the users that active user follow 
             }
 
-            await followedUserPhotos.sort((a, b) => b.dateCreated - a.dateCreated)
+            followedUserPhotos.sort((a, b) => b.dateCreated - a.dateCreated)
             setPhotos(followedUserPhotos)
         }
 
         getTimelinePhotos()
 
-    }, [userId,photos])
+    }, [userId])
 
 
     return { photos }
