@@ -7,6 +7,7 @@ export default function Timeline() {
 
     const { photos } = usePhotos()
     console.log(photos)
+
     return (
         <div className="container col-span-2">
             {
@@ -18,7 +19,9 @@ export default function Timeline() {
             {
                 photos?.length > 0 ?
                     (photos.map((content) =>
-                        <Post key={content.docId} src={content.imageSrc} />)
+                        <Post key={content.docId} docId={content.docId} 
+                        caption={content.caption}
+                        likes={content.likes} userLikedPhoto={content.userLikedPhoto} username={content.username} src={content.imageSrc} />)
                     ) : (<p className="text-center text-2xl">Follow people to see photos</p>)
             }
         </div>
