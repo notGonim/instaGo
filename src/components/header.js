@@ -22,7 +22,7 @@ export default function Header() {
                     <div className="text-gray-700 flex text-center items-center align-items cursor-pointer ">
                         <h1 className="justify-center flex w-full">
                             <Link to={ROUTES.DASHBOARD} aria-label="instaGo logo">
-                                <img src="images/logo.png" alt="logo" className="mt-2 w-6/12 " />
+                                <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo" className="mt-2 w-6/12 " />
                             </Link>
                         </h1>
                     </div>
