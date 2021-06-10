@@ -8,34 +8,11 @@ import ProtectedRoute from "./helpers/protected-routes";
 import useAuthListner from "./hooks/use-auth-listner";
 
 
-const login = lazy(() => import('./pages/Login'))
-const signup = lazy(() => import('./pages/Signup'))
-const dashboard = lazy(() => import('./pages/Dashboard'))
+const Login = lazy(() => import('./pages/Login'))
+const Signup = lazy(() => import('./pages/Signup'))
+const Dashboard = lazy(() => import('./pages/Dashboard'))
 const profile = lazy(() => import('./pages/Profile'))
 const notFound = lazy(() => import('./pages/not-found'))
-
-
-
-/*
-    <Router>
-        <Suspense fallback={<p>Loading ...</p>}>
-          <Switch>
-          <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
-              <login />
-            </IsUserLoggedIn>
-            <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
-              <signup />
-            </IsUserLoggedIn>
-            <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact   >
-              <dashboard />
-            </ProtectedRoute>
-            <Route component={notFound} />
-          </Switch>
-        </Suspense>
-      </Router>
-
-
-*/
 
 
 function App() {
@@ -44,17 +21,24 @@ function App() {
 
   return (
     <UserContext.Provider value={{ user }}>
-      <Router>
+     <Router>
         <Suspense fallback={<p>Loading ...</p>}>
           <Switch>
-            <Route path={ROUTES.DASHBOARD} exact component={dashboard} />
+            <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.LOGIN}>
+              <Login />
+            </IsUserLoggedIn>
+            <IsUserLoggedIn user={user} loggedInPath={ROUTES.DASHBOARD} path={ROUTES.SIGNUP}>
+              <Signup />
+            </IsUserLoggedIn>
+            <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact   >
+              <Dashboard />
+            </ProtectedRoute>
             <Route path={ROUTES.PROFILE} exact component={profile} />
-            <Route path={ROUTES.LOGIN} exact component={login} />
-            <Route path={ROUTES.SIGNUP} exact component={signup} />
-            <Route path={ROUTES.NOT_FOUND} exact component={notFound} />
+            <Route component={notFound} />
           </Switch>
         </Suspense>
-      </Router>    </UserContext.Provider>
+      </Router>
+        </UserContext.Provider>
 
   );
 }

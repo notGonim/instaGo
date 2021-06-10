@@ -1,9 +1,7 @@
-export default function Header({ username }) {
+export default function Header({ photosCount, profile, followerCount, setFollowerCount }) {
 
     return (
         <>
-
-            {username}
         </>
     )
 }
