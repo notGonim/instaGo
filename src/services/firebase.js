@@ -63,7 +63,6 @@ export async function updateFollowedUserFollowers(
 // this func is to get photos of the users that active user follow
 export async function getPhotos(userId, following) {
     // [5,4,2] => following
-    console.log('userId ====> ', userId, '   Following ===> ', following)
     const result = await firebase
         .firestore()
         .collection('photos')
@@ -75,7 +74,6 @@ export async function getPhotos(userId, following) {
         docId: photo.id
     }));
 
-    console.log(result)
     const photosWithUserDetails = await Promise.all(
         userFollowedPhotos.map(async (photo) => {
             let userLikedPhoto = false;
@@ -93,12 +91,28 @@ export async function getPhotos(userId, following) {
 }
 
 export async function getUserByUsername(username) {
-    const result = await firebase.firestore().collection('users').where('username', '===', username).get()
-    const user = result.docs.map((item) => (
-        {
-            ...item.data(),
-            docId: item.id
-        }
-    ))
-    return user
+    const result = await firebase
+        .firestore()
+        .collection('users')
+        .where('username', '==', username)
+        .get();
+    return result.docs.map((item) => ({
+        ...item.data(),
+        docId: item.id
+    }));
 }
+
+export async function getUserPhotosByUserId(userId) {
+    const result = await firebase
+      .firestore()
+      .collection('photos')
+      .where('userId', '==', userId)
+      .get();
+  
+    const photos = result.docs.map((photo) => ({
+      ...photo.data(),
+      docId: photo.id
+    }));
+    return photos;
+  }
+  

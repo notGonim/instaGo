@@ -1,10 +1,9 @@
-export default function Header() {
+export default function Header({ username }) {
 
     return (
         <>
 
-
-
+            {username}
         </>
     )
 }
