@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import Skeleton from "react-loading-skeleton"
 import UserContext from "../../context/user"
 import useUser from "../../hooks/use-user"
-import { isUserFollowingProfile } from "../../services/firebase"
+import { isUserFollowingProfile, toggleFollow } from "../../services/firebase"
 export default function Header({ photosCount, followerCount, setFollowerCount,
     profile: { docId: profileDocId,
         userId: profileUserId,
@@ -31,7 +31,7 @@ export default function Header({ photosCount, followerCount, setFollowerCount,
         setFollowerCount({
             followerCount: isFollowingProfile ? followerCount - 1 : followerCount + 1
         });
-        // await toggleFollow(isFollowingProfile, user.docId, profileDocId, profileUserId, user.userId);
+        await toggleFollow(isFollowingProfile, user.docId, profileDocId, profileUserId, user.userId);
         
     };
 
