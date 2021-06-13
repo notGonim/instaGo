@@ -101,18 +101,31 @@ export async function getUserByUsername(username) {
         docId: item.id
     }));
 }
+export async function isUserFollowingProfile(loggedInUserUsername, profileUserId) {
+    const result = await firebase
+        .firestore()
+        .collection('users')
+        .where('username', '==', loggedInUserUsername) // gonim12 (active logged in user)
+        .where('following', 'array-contains', profileUserId)
+        .get();
 
+    const [response = {}] = result.docs.map((item) => ({
+        ...item.data(),
+        docId: item.id
+    }));
+
+    return response.userId;
+}
 export async function getUserPhotosByUserId(userId) {
     const result = await firebase
-      .firestore()
-      .collection('photos')
-      .where('userId', '==', userId)
-      .get();
-  
+        .firestore()
+        .collection('photos')
+        .where('userId', '==', userId)
+        .get();
+
     const photos = result.docs.map((photo) => ({
-      ...photo.data(),
-      docId: photo.id
+        ...photo.data(),
+        docId: photo.id
     }));
     return photos;
-  }
-  
+}

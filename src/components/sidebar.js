@@ -4,12 +4,12 @@ import Suggestion from './suggestion'
 import User from './user'
 const Sidebar = () => {
 
-    const { user: { docId,fullname, userId, username, following } } = useUser()
- 
+    const { user: { docId, fullname, userId, username, following } } = useUser()
+
     return (
         <div>
             <User username={username} fullname={fullname} />
-            <Suggestion userId={userId} following={following}  loggedInUserDoc={docId} />
+            <Suggestion userId={userId} following={following} loggedInUserDoc={docId} />
         </div>
 
     )
