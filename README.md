@@ -84,6 +84,10 @@ $ npm start
   ![homepho_optimized](https://user-images.githubusercontent.com/69145711/122097959-8a4c8000-ce10-11eb-98c7-5772a3491bfb.png)
 
 
+  <hr/>
+  
+  ![home-page-followed-loved-comment-viewmore_optimized](https://user-images.githubusercontent.com/69145711/122098120-b831c480-ce10-11eb-8116-57653ded2634.png)
+
 
 <br/>
   <h3 align="center">Profile Page</h3>
