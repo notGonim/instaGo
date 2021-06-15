@@ -56,6 +56,15 @@ $ npm start
 ### Screenshots
 
 
+<div align="center">
+
+<h3 align="center">Home Page</h3>
+
+![image](images/logo.png)
+
+<hr />
+
+
 ## BackLog
 
 - [x] ~Connect Instanew with firebase to provide authentication (login-signup)~
