@@ -57,25 +57,24 @@ $ npm start
 
 
 <div align="center">
+  
 <h3 align="center">Login Page</h3>
 
 ![login-page](https://user-images.githubusercontent.com/69145711/122089315-edd1b000-ce06-11eb-9e05-033a708a277c.png)
 
 <hr />
-
 ![login-validation](https://user-images.githubusercontent.com/69145711/122089543-27a2b680-ce07-11eb-8ad3-f42d6dbbe02c.png)
-
 
 <br />
 
 <h3 align="center">Home Page</h3>
-
 ![home-page](https://user-images.githubusercontent.com/69145711/122090113-b6173800-ce07-11eb-8448-2ccccb67b266.png)
-
-
-<br />
-
-
+<hr/>
+![home-page-followed-loved](https://user-images.githubusercontent.com/69145711/122090925-95031700-ce08-11eb-8f51-2ba9afc06da4.png)
+ <hr/>
+  
+<br/>
+  
 </div>
 
 
@@ -88,7 +87,6 @@ $ npm start
 - [ ] Create modal for posts (when user click the post the modal popup)
 - [x] Create modals for following, followers in profile-page
 - [] Create modals for see all suggested users~
-
 
 
 ## License
