@@ -15,9 +15,9 @@ export default function Profile() {
         document.title = `${username } - Profile`
 
         async function checkUserExists() {
-            const user = await getUserByUsername(username)
-            if (user.length > 0) {
-                setUser(user[0])
+            const [user] = await getUserByUsername(username)
+            if (user?.userId ) {
+                setUser(user)
                 setUserExists(true)
             } else {
                 history.pushState(ROUTES.NOT_FOUND)
