@@ -11,7 +11,6 @@ export default function Post({ username, dateCreated, docId, likes, comments, us
 
     const commentInput = useRef(null)
     const handleFocus = () => commentInput.current.focus()
-console.log(dateCreated)
     return (
 
         <div className="rounded col-span-4 mb-8 border bg-white  border-gray-primary ">
