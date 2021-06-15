@@ -60,7 +60,8 @@ $ npm start
 
 <h3 align="center">Home Page</h3>
 
-![image](images/logo.png)
+![iphone-with-profile](https://user-images.githubusercontent.com/69145711/122086068-a7c71d00-ce03-11eb-88e3-1e4ab17a74ea.jpg)
+
 
 <hr />
 
