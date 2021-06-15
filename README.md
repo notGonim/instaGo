@@ -57,13 +57,28 @@ $ npm start
 
 
 <div align="center">
+<h3 align="center">Login Page</h3>
 
-<h3 align="center">Home Page</h3>
+![login-page](https://user-images.githubusercontent.com/69145711/122089315-edd1b000-ce06-11eb-9e05-033a708a277c.png)
 
-![iphone-with-profile](https://user-images.githubusercontent.com/69145711/122086068-a7c71d00-ce03-11eb-88e3-1e4ab17a74ea.jpg)
+<hr />
+
+![login-validation](https://user-images.githubusercontent.com/69145711/122089543-27a2b680-ce07-11eb-8ad3-f42d6dbbe02c.png)
+
+
+<br />
+
+<h3 align="center">Sign-Up Page</h3>
+
+
 
 
 <hr />
+
+
+<br />
+
+
 </div>
 
 
