@@ -71,6 +71,20 @@ $ npm start
 <br/> 
   <h3 align="center">Sign-Up Page</h3>
 
+  ![image](https://user-images.githubusercontent.com/69145711/122092259-0099b400-ce0a-11eb-8efc-d9d697e00464.png)
+
+  <hr/> 
+  
+  
+  
+
+  <br/>
+  
+    <h3 align="center">Home Page</h3>
+
+
+  
+  <br/>
 </div>
 
 
