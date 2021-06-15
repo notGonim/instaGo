@@ -78,10 +78,12 @@ $ npm start
   <h3 align="center">Home Page</h3>
 
 ![image](https://user-images.githubusercontent.com/69145711/122093336-45721a80-ce0b-11eb-806e-318466bc2ca4.png)
+ 
   <hr/>
-  ![homepho_optimized](https://user-images.githubusercontent.com/69145711/122096803-3beab180-ce0f-11eb-98b0-f411b39628e4.png)
-<hr/>
-  ![home-page-followed-loved-comment-viewmore_optimized](https://user-images.githubusercontent.com/69145711/122096942-62a8e800-ce0f-11eb-8fb2-b99060d4a93a.png)
+ 
+  ![homepho_optimized](https://user-images.githubusercontent.com/69145711/122097959-8a4c8000-ce10-11eb-98c7-5772a3491bfb.png)
+
+
 
 <br/>
   <h3 align="center">Profile Page</h3>
