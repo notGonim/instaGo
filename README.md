@@ -50,9 +50,6 @@ $ npm start
 ```
 
 
-## File Structure
-
-
 ### Screenshots
 
 
@@ -81,10 +78,13 @@ $ npm start
 ![image](https://user-images.githubusercontent.com/69145711/122093336-45721a80-ce0b-11eb-806e-318466bc2ca4.png)
   <hr/>
   
+<br/>
+  <h3 align="center">Profile Page</h3>
+  
 
-
-
-
+  <hr/>
+  
+ 
   
   <br/>
 </div>
