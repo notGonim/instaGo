@@ -60,21 +60,17 @@ $ npm start
   
 <h3 align="center">Login Page</h3>
 
-![login-page](https://user-images.githubusercontent.com/69145711/122089315-edd1b000-ce06-11eb-9e05-033a708a277c.png)
-
-<hr />
-![login-validation](https://user-images.githubusercontent.com/69145711/122089543-27a2b680-ce07-11eb-8ad3-f42d6dbbe02c.png)
-
-<br />
-
-<h3 align="center">Home Page</h3>
-![home-page](https://user-images.githubusercontent.com/69145711/122090113-b6173800-ce07-11eb-8448-2ccccb67b266.png)
-<hr/>
-![home-page-followed-loved](https://user-images.githubusercontent.com/69145711/122090925-95031700-ce08-11eb-8f51-2ba9afc06da4.png)
- <hr/>
+  ![image](https://user-images.githubusercontent.com/69145711/122092004-badceb80-ce09-11eb-9e42-1e5d132a822a.png)
   
-<br/>
+  <hr/>
   
+![login-validation](https://user-images.githubusercontent.com/69145711/122091833-8701c600-ce09-11eb-8279-1032451f28f6.png)
+
+  <hr/>
+  
+<br/> 
+  <h3 align="center">Sign-Up Page</h3>
+
 </div>
 
 
