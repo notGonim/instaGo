@@ -72,19 +72,29 @@ $ npm start
 ![image](https://user-images.githubusercontent.com/69145711/122093074-f5935380-ce0a-11eb-85bd-be26915df96b.png)
   
   
+  <br/>
+  
+  
   <h3 align="center">Home Page</h3>
   
 
 ![image](https://user-images.githubusercontent.com/69145711/122093336-45721a80-ce0b-11eb-806e-318466bc2ca4.png)
   <hr/>
-  
+  ![homepho_optimized](https://user-images.githubusercontent.com/69145711/122096803-3beab180-ce0f-11eb-98b0-f411b39628e4.png)
+<hr/>
+  ![home-page-followed-loved-comment-viewmore_optimized](https://user-images.githubusercontent.com/69145711/122096942-62a8e800-ce0f-11eb-8fb2-b99060d4a93a.png)
+
 <br/>
   <h3 align="center">Profile Page</h3>
   
 
+![profile-unfollow_optimized](https://user-images.githubusercontent.com/69145711/122096539-f6c67f80-ce0e-11eb-9ee4-ff4ca9d3847b.png)
+
+
   <hr/>
   
- 
+ ![profile-follow_optimized](https://user-images.githubusercontent.com/69145711/122096730-24abc400-ce0f-11eb-9e6d-ea9fbcdd8790.png)
+
   
   <br/>
 </div>
