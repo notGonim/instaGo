@@ -64,6 +64,7 @@ $ npm start
 
 
 <hr />
+</div>
 
 
 ## BackLog
