@@ -75,12 +75,19 @@ $ npm start
 
   <hr/> 
   
+
+![image](https://user-images.githubusercontent.com/69145711/122093074-f5935380-ce0a-11eb-85bd-be26915df96b.png)
   
   
 
-  <br/>
+ <br/>
   
     <h3 align="center">Home Page</h3>
+
+![image](https://user-images.githubusercontent.com/69145711/122093336-45721a80-ce0b-11eb-806e-318466bc2ca4.png)
+  <hr/>
+  
+
 
 
   
