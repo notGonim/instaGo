@@ -68,12 +68,9 @@ $ npm start
 
 <br />
 
-<h3 align="center">Sign-Up Page</h3>
+<h3 align="center">Home Page</h3>
 
-
-
-
-<hr />
+![home-page](https://user-images.githubusercontent.com/69145711/122090113-b6173800-ce07-11eb-8448-2ccccb67b266.png)
 
 
 <br />
