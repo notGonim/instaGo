@@ -24,6 +24,14 @@
 > InstaGo is a a social media app that is a mimic for [Instagram](https://www.instagram.com/) built using [Reactjs](https://reactjs.org/).
 
 
+### Build with
+- [React JS](https://reactjs.org/)
+- [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Jest](https://jestjs.io/)
+- [Firebase](https://firebase.google.com/)
+
+
 ### Installation
 
 1. **_Clone the repository_**
