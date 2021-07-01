@@ -118,4 +118,4 @@ $ npm start
 
 ## License
 
-> This software is licensed under MIT License, See [License](https://github.com/AbdallahHemdan/Instanews/blob/master/LICENSE) for more information ©gonim.
+> This software is licensed under MIT License, for more information ©gonim.
